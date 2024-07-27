@@ -1,11 +1,16 @@
 from openai import OpenAI
 from secure import *
 
-client = OpenAI(
-    base_url="https://api.gpts.vin/v1",
-    api_key='sk-Nqn4bgVjHfbJZgxx02Bc232fB9Cf4904B419D8D4B3999aA7'
-)
+# client = OpenAI(
+#     base_url="https://api.gpts.vin/v1",
+#     api_key='sk-Nqn4bgVjHfbJZgxx02Bc232fB9Cf4904B419D8D4B3999aA7'
+# )
 
+
+client = OpenAI(
+    base_url=GPT_3_API,
+    api_key=OPENAI_API_KEY
+)
 
 def get_response():
     completion = client.chat.completions.create(
