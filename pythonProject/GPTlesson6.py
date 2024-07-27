@@ -10,8 +10,8 @@ from secure import *
 # openai.api_key = OPENAI_API_KEY
 
 client = OpenAI(
-    base_url="https://api.gpts.vin/v1",
-    api_key='sk-Nqn4bgVjHfbJZgxx02Bc232fB9Cf4904B419D8D4B3999aA7'
+    base_url=GPT_3_API,
+    api_key=OPENAI_API_KEY
 )
 
 
@@ -65,7 +65,7 @@ with gr.Blocks(css="#chatbot{height:300px} .overflow-y-auto{height:500px}") as d
     state = gr.State([])
 
     with gr.Row():
-        txt = gr.Textbox(show_label=False, placeholder="Enter text and press enter")
+        txt = gr.Textbox(show_label=False, placeholder="输入问题，按enter发送")
     txt.submit(answer, [txt, state], [chatbot, state])
 
 demo.launch()
