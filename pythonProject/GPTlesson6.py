@@ -7,6 +7,9 @@ from openai import OpenAI
 import gradio as gr
 from secure import *
 
+
+
+
 # openai.api_key = OPENAI_API_KEY
 
 client = OpenAI(
